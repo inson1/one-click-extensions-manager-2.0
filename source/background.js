@@ -38,7 +38,9 @@ function updateBadgeText() {
     chrome.browserAction.setBadgeText({ text: "1" });
 }
 
-updateBadgeText();
+chrome.action.onClicked.addListener(async () => {
+	updateBadgeText();
+});
 
 matchOptions();
 
