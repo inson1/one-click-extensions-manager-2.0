@@ -34,6 +34,19 @@ chrome.action.onClicked.addListener(async () => {
 	}
 });
 
+function updateBadgeText() {
+    chrome.browserAction.setBadgeText({ text: "1" });
+}
+
+function loopToUpdateIcon(ms) {
+    updateBadgeText();
+    setTimeout(() => {
+        loopToUpdateIcon(ms);
+    }, ms);
+}
+
+loopToUpdateIcon(4000);
+
 matchOptions();
 
 // DEVELOPMENT MODE: uncomment this so the tab will reopen on extension reload
