@@ -35,14 +35,13 @@ chrome.action.onClicked.addListener(async () => {
 });
 
 function updateBadgeText() {
-    chrome.browserAction.setBadgeText({ text: "1" });
+    browser.browserAction.setBadgeText({ text: "1" });
 }
 
-chrome.action.onClicked.addListener(async () => {
-	updateBadgeText();
-});
+browser.browserAction.onClicked.addListener(increment);
 
-matchOptions();
+
+matchOptions(updateBadgeText);
 
 // DEVELOPMENT MODE: uncomment this so the tab will reopen on extension reload
 // chrome.tabs.create({url:'chrome-extension://aknaajkpkdhfnbdfopjlkpkmajdckgfk/index.html?type=tab'})
