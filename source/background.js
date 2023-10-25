@@ -38,14 +38,7 @@ function updateBadgeText() {
     chrome.browserAction.setBadgeText({ text: "1" });
 }
 
-function loopToUpdateIcon(ms) {
-    updateBadgeText();
-    setTimeout(() => {
-        loopToUpdateIcon(ms);
-    }, ms);
-}
-
-loopToUpdateIcon(4000);
+updateBadgeText();
 
 matchOptions();
 
